@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+    <style>
+        body {
+            background: linear-gradient(to bottom right, #61a5c2, #88b1cc);
+            min-height: calc(100vh - 72px);
+            padding: 20px;
+            color: #fff;
+            text-align: center;
+        }
+
+        table {
+            width: 80%;
+            margin: auto;
+            margin-top: 30px;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid #fff;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="w3-bar w3-teal">
+    <button class="w3-bar-item w3-button" onclick="window.location.href='http://localhost/sqlite/insertardistribuidor.html'">Agregar Distribuidor</button>
+    <button class="w3-bar-item w3-button" onclick="window.location.href='http://localhost/sqlite/eliminardistribuidor.html'">Eliminar Distribuidor</button>
+    <button class="w3-bar-item w3-button" onclick="window.location.href='http://localhost/sqlite/modificardistribuidor.html'">Modificar Distribuidor</button>
+    <button class="w3-bar-item w3-button" onclick="window.location.href='http://localhost/sqlite/insertarproducto.html'">Agregar Producto</button>
+    <button class="w3-bar-item w3-button" onclick="window.location.href='http://localhost/sqlite/eliminarproducto.html'">Eliminar Producto</button>
+    <button class="w3-bar-item w3-button" onclick="window.location.href='http://localhost/sqlite/modificarproducto.html'">Modificar Producto</button>
+    <button class="w3-bar-item w3-button" onclick="window.location.href='http://localhost/sqlite/insertarventa.html'">Agregar Venta</button>
+    <button class="w3-bar-item w3-button" onclick="window.location.href='http://localhost/sqlite/eliminarventa.html'">Eliminar Venta</button>
+    <button class="w3-bar-item w3-button" onclick="window.location.href='http://localhost/sqlite/modificarventa.html'">Modificar Venta</button>
+    <button class="w3-bar-item w3-button" onclick="window.location.href='http://localhost/sqlite/php/leer-datos-generales-smpl.php'">Ver Datos Generales</button>
+</div>
+<div class="w3-container">
+        <h1>Sistema de Gestión de la Tienda Juguetes Felices</h1>
+        <h2>Los productos más vendidos.</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre del Producto</th>
+                    <th>Precio</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    
+                    <td>Peluche de oso gigante</td>
+                    <td>$39.99</td>
+                </tr>
+                <tr>
+                    
+                    <td>Set de bloques de construcción</td>
+                    <td>$29.99</td>
+                </tr>
+                <tr>
+                    
+                    <td>Muñeca parlante interactivo</td>
+                    <td>$49.99</td>
+                </tr>
+                <tr>
+                    <
+                    <td>Carrito de control remoto</td>
+                    <td>$24.99</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+</body>
+</html>

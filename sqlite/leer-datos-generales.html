@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Datos desde la Base de Datos</title>
+    </head>
+    <body>
+        <h1>Productos</h1>
+        <table>
+            <thead>
+                <tr><td>ID</td><td>Nombre</td><td>Categoría</td><td>Descripción</td><td>Stock</td><td>Precio</td></tr>
+            </thead>
+            <tbody id="productosTabla"></tbody>
+        </table>
+
+        <h1>Distribuidores</h1>
+        <table>
+            <thead>
+                <tr><td>ID</td><td>Nombre</td><td>Teléfono</td><td>Dirección</td><td>Correo</td></tr>
+            </thead>
+            <tbody id="distribuidoresTabla"></tbody>
+        </table>
+
+        <h1>Ventas</h1>
+        <table>
+            <thead>
+                <tr><td>ID</td><td>Nombre</td><td>Categoría</td><td>Precio</td><td>Cantidad</td><td>Total</td></tr>
+            </thead>
+            <tbody id="ventasTabla"></tbody>
+        </table>
+
+        <script>
+        fetch('devuelve_datos.php')
+            .then(response => response.json())
+            .then(data => {
+                // Mostrar productos
+                let productosContent = "";
+                data.productos.forEach(producto => {
+                    productosContent += "<tr>";
+                    productosContent += "<td>" + producto.id + "</td>";
+                    productosContent += "<td>" + producto.nombre + "</td>";
+                    productosContent += "<td>" + producto.categoria + "</td>";
+                    productosContent += "<td>" + producto.descripcion + "</td>";
+                    productosContent += "<td>" + producto.stock + "</td>";
+                    productosContent += "<td>" + producto.precio + "</td>";
+                    productosContent += "</tr>";
+                });
+                document.getElementById("productosTabla").innerHTML = productosContent;
+
+                // Mostrar distribuidores
+                let distribuidoresContent = "";
+                data.distribuidores.forEach(distribuidor => {
+                    distribuidoresContent += "<tr>";
+                    distribuidoresContent += "<td>" + distribuidor.id + "</td>";
+                    distribuidoresContent += "<td>" + distribuidor.nombre + "</td>";
+                    distribuidoresContent += "<td>" + distribuidor.telefono + "</td>";
+                    distribuidoresContent += "<td>" + distribuidor.direccion + "</td>";
+                    distribuidoresContent += "<td>" + distribuidor.correo + "</td>";
+                    distribuidoresContent += "</tr>";
+                });
+                document.getElementById("distribuidoresTabla").innerHTML = distribuidoresContent;
+
+                // Mostrar ventas
+                let ventasContent = "";
+                data.ventas.forEach(venta => {
+                    ventasContent += "<tr>";
+                    ventasContent += "<td>" + venta.id + "</td>";
+                    ventasContent += "<td>" + venta.nombre + "</td>";
+                    ventasContent += "<td>" + venta.categoria + "</td>";
+                    ventasContent += "<td>" + venta.precio + "</td>";
+                    ventasContent += "<td>" + venta.cantidad + "</td>";
+                    ventasContent += "<td>" + venta.total + "</td>";
+                    ventasContent += "</tr>";
+                });
+                document.getElementById("ventasTabla").innerHTML = ventasContent;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        </script>
+    </body>
+</html>
